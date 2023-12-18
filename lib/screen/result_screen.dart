@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/homePage.dart';
+import 'package:quiz_app/register/login%20view.dart';
 
 class ResultScreen extends StatefulWidget {
   int score;
-
+  LoginView l1 = LoginView();
   ResultScreen(this.score, {super.key});
 
   static const routename = 'ResultScreen';

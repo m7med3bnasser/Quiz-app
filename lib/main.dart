@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/homePage.dart';
+import 'package:quiz_app/register/login%20view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-   home: HomePage(),
+   routes: {
+     LoginView.routeName: (context) => LoginView(),
+     HomePage.routeName1:(context)=> HomePage(),
+   },
+   initialRoute:LoginView.routeName ,
+
     );
   }
 }

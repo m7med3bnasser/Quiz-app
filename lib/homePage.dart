@@ -5,13 +5,14 @@ import 'package:quiz_app/screen/result_screen.dart';
 class HomePage extends StatefulWidget {
   HomePage({super.key});
 
+  static const String routeName1 = "homepage";
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   Color primaryColor = Color(0xFF252c4a);
-
   Color scandaryColor = Color(0xFF117eeb);
   PageController? _controller = PageController(initialPage: 0);
   bool isPressed = false;
@@ -112,15 +113,14 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       OutlinedButton(
-
-
                         onPressed: isPressed
                             ? index + 1 == questions.length
                                 ? () {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => ResultScreen(score),
+                                          builder: (context) =>
+                                              ResultScreen(score),
                                         ));
                                   }
                                 : () {
@@ -128,15 +128,14 @@ class _HomePageState extends State<HomePage> {
                                         duration: Duration(milliseconds: 500),
                                         curve: Curves.linear);
                                     setState(() {
-                                      isPressed=false;
+                                      isPressed = false;
                                     });
                                   }
-                            :null ,
-                        style:OutlinedButton.styleFrom(
+                            : null,
+                        style: OutlinedButton.styleFrom(
                           shape: StadiumBorder(),
-                          side: BorderSide(color: Colors.orange,width: 1),
-                        ) ,
-
+                          side: BorderSide(color: Colors.orange, width: 3),
+                        ),
                         child: Text(
                           index + 1 == questions.length
                               ? "See Result"
